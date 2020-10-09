@@ -14,10 +14,12 @@ public:
      *      2. last char of result string -> result_last
      *  
      *  Cases for process current char (denoted by s[i] in source code):
-     *      1. If current is less than the result_last and it's unique, then add it into result.
-     *      2. If current is less than the result_last and it's duplicate, then ignore it.
-     *      3. If current is greater than the result_last and it is unique, then it's added into result string.
-     *      4. If current is greater than the result_last and it is duplicate, then we discard the result_last and add current into result string.
+     *      1. If current is already in the result string, we jump to next char;
+     *      2. If current is not in the result string:
+     *         1. If current is greater the result_last, then add it into result.
+     *         2. If current is less than the result_last and there are duplicates
+     *            of result_last in s in the range of [i, s.size()), then we discard 
+     *            the result_last and add current into result string.
      */
     string removeDuplicateLetters(string s) {
         string result;
