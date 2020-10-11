@@ -21,3 +21,11 @@ add_executable(1491_test
 target_link_libraries(1491_test
     gtest_main
 )
+
+add_executable(904_test
+    ../901-1000/904_solution_1.hpp
+    904_test.cpp
+)
+target_link_libraries(904_test
+    gtest_main
+)
